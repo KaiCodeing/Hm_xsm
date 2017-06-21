@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:id="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:layout_marginBottom="2dp">
+    <TextView
+        android:id="@+id/search_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="搜索内容"
+        android:textColor="#565656"
+        android:textSize="@dimen/textsize_8"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="2"></View>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@mipmap/sanjiao_next_img"/>
+</LinearLayout>
+    <TextView
+        android:id="@+id/delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="清除搜索记录"
+        android:gravity="center"
+        android:textColor="@color/backgroud_title"
+        android:textSize="@dimen/textsize_8"
+        android:background="@color/white"></TextView>
+</LinearLayout>

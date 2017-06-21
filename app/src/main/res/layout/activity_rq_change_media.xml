@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_p">
+    <include layout="@layout/title_right_left"></include>
+
+    <LinearLayout
+        android:id="@+id/layout_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="投放客户名称"
+            android:textColor="#2B2B2B"
+            android:textSize="@dimen/textsize_7" />
+
+        <EditText
+            android:id="@+id/input_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="输入客户名称"
+            android:paddingBottom="20dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:textColor="#171717"
+            android:textSize="@dimen/textsize_7" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/sanjiao_next_img" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/start_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="上刊日期"
+            android:textColor="#2B2B2B"
+            android:textSize="@dimen/textsize_7" />
+
+        <TextView
+            android:id="@+id/select_start_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="选择上刊日期"
+            android:paddingBottom="20dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:textColor="#171717"
+            android:textSize="@dimen/textsize_7" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/sanjiao_next_img" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:background="#F1F1F1"></View>
+
+    <LinearLayout
+        android:id="@+id/over_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="下刊日期"
+            android:textColor="#2B2B2B"
+            android:textSize="@dimen/textsize_7" />
+
+        <TextView
+            android:id="@+id/select_over_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="选择下刊日期"
+            android:paddingBottom="20dp"
+            android:paddingRight="5dp"
+            android:paddingTop="20dp"
+            android:textColor="#171717"
+            android:textSize="@dimen/textsize_7" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/sanjiao_next_img" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:background="@drawable/login_bg_on"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="@dimen/textsize_7"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"/>
+</LinearLayout>

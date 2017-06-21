@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_p">
+    <include layout="@layout/title_right_left"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_margin="10dp">
+        <EditText
+            android:id="@+id/input_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="您有什么要好的建议，可以反馈给我们"
+            android:gravity="top|left"
+            android:textSize="@dimen/textsize_8"
+            android:padding="10dp"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+</LinearLayout>

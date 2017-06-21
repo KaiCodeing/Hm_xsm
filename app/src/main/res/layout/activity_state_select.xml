@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
+    <include layout="@layout/title_right_left"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按行业筛选"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/textsize_7"/>
+        <com.hemaapp.xsm.view.JhctmGridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp"
+            android:listSelector="@color/transparent"
+            ></com.hemaapp.xsm.view.JhctmGridView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按报备状态"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/textsize_7"/>
+        <com.hemaapp.xsm.view.JhctmGridView
+            android:id="@+id/gridview_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp"
+            android:listSelector="@color/transparent"
+            ></com.hemaapp.xsm.view.JhctmGridView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/city_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="城市筛选"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#BE0009"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></View>
+        <TextView
+            android:id="@+id/user_position"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="请选择"
+            android:paddingBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_gravity="center"
+            android:layout_height="15dp"
+            android:background="@mipmap/sanjiao_next_img"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/start_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按投放开始日期筛选"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#BE0009"/>
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="请选择"
+            android:paddingBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_gravity="center"
+            android:layout_height="15dp"
+            android:background="@mipmap/sanjiao_next_img"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/over_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="20dp"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按投放结束日期筛选"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#BE0009"/>
+
+        <TextView
+            android:id="@+id/over_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="请选择"
+            android:paddingBottom="20dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:textColor="#2F2F2F"
+            android:textSize="@dimen/textsize_7" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_gravity="center"
+            android:layout_height="15dp"
+            android:background="@mipmap/sanjiao_next_img"/>
+    </LinearLayout>
+            <TextView
+                android:id="@+id/empty_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/empty_condition_bg"
+                android:text="清空筛选条件"
+                android:gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

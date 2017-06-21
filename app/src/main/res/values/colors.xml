@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="backgroud_title">#F16236</color>
+    <color name="add_user_color">#4E69A3</color>
+    <color name="main_text_off">#525252</color>
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="qinkong">#2A2A2A</color>
+    <color name="phone_bg">#f6f6f6</color>
+    <color name="text_select">#181818</color>
+</resources>

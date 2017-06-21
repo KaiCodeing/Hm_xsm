@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/show_issue_img">
+        <TextView
+            android:id="@+id/issue_reput"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:layout_weight="1"
+            android:text="我要报备"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_8"/>
+        <TextView
+            android:id="@+id/my_reput"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="我报备的"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_8"/>
+    </LinearLayout>
+</LinearLayout>

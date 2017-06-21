@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_right_image"></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <FrameLayout
+                android:id="@+id/vp_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hemaapp.xsm.view.JhViewPager
+                    android:id="@+id/adviewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom">
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal" />
+                </FrameLayout>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/company_case_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="公司名称案例展示"
+                android:textSize="@dimen/textsize_8"
+                android:textColor="#2B2B2B"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"/>
+            </LinearLayout>
+    </ScrollView>
+</LinearLayout>

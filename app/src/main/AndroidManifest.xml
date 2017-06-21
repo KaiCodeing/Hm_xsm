@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.hemaapp.xsm">
+    <!-- permissions start -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- 使用定位功能所需权限 -->
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- shareSDK权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- 百度推送权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <!-- 个推  start -->
+    <uses-permission android:name="getui.permission.GetuiService.com.hemaapp.xsm" /> <!-- 替换为第三方应用的包名 -->
+    <permission
+        android:name="getui.permission.GetuiService.com.hemaapp.xsm"
+        android:protectionLevel="normal"> <!-- 替换为第三方应用的包名 -->
+    </permission>
+    <!-- 个推 end -->
+
+    <!-- permissions send -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    <application
+        android:name="com.hemaapp.xsm.JhctmApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="name,icon,label,theme">
+        <!-- 个推SDK配置开始 -->
+        <!-- 配置的第三方参数属性 -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="iOIPrq92DM7HpRS1FWzHh7" /> <!-- 替换为第三方应用的APPID -->
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="aeYIKiAclB7Bx2W8X4i6C3" /> <!-- 替换为第三方应用的APPKEY -->
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="4abLx4PPuU52JSb0eD1M98" /> <!-- 替换为第三方应用的APPSECRET -->
+        <!-- 配置SDK核心服务 -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" />
+        <service
+            android:name="com.igexin.sdk.PushServiceUser"
+            android:exported="true"
+            android:label="NotificationCenterUser" />
+
+        <receiver android:name="com.igexin.sdk.PushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+                <!-- 以下三项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.igexin.sdk.GActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.hemaapp.xsm"
+            android:exported="true"
+            android:process=":pushservice" /> <!-- 替换为第三方应用的包名 -->
+
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <action android:name="com.igexin.sdk.action.iOIPrq92DM7HpRS1FWzHh7" /> <!-- 替换为第三方应用的APPID -->
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+
+        <!-- 配置第三方Receiver -->
+        <receiver
+            android:name="com.hemaapp.xsm.getui.PushDemoReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.iOIPrq92DM7HpRS1FWzHh7" /> <!-- 替换为第三方应用的APPID -->
+            </intent-filter>
+        </receiver>
+        <!-- 个推SDK配置结束 -->
+        <!-- 高德地图ApiKey -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="f6ed2a41a261b7ca5b0827b1408de9dc" />
+        <!-- <meta-data
+                  android:name="com.amap.api.v2.apikey"
+                  android:value="d8b9c259850bbd223806426aca09506b" />-->
+        <!-- 本机 -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.AdsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.StartActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaOnlyMapActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.FindPwdActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SetPasswordActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.UserInformationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SetingActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.FeedBackActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.AboutSoftActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.ChangePWDActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MyCollectActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MessageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.hemaapp.xsm.activity.MessageInforActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.CityReportActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.NavigationMapActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.CaseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SelectIndustryActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.CaseInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.DriveRouteDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.TheSingleActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.StateSelectActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MyReportActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.FollowUpInforActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.WantReportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.StateInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaIssueActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MyIssueActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SearchActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.AlbumActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SearchActivity_Map"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.SearchResultActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.hm_FrameWork.showlargepic.ShowLargePicActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MyReportIndustryActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaScreeningActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.MediaPriceActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.CompanyInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.WebViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.FreezeListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.City0Activity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.RqSearchResultActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.RqChangeMediaActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.PTManageActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.TPInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.RqLoactionResultActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.LoactionSelectActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.LoactionReserveActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.ReserveInformationActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.ReserveListActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.RQSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden"></activity>
+        <activity
+            android:name="com.hemaapp.xsm.activity.UpLoadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/toast"></activity>
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+
+    </application>
+
+</manifest>

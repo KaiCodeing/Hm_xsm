@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">新社媒</string>
+    <string name="forget_pwd"><u>忘记密码?</u></string>
+    <string name="zc_text"><u>注册协议</u></string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+</resources>

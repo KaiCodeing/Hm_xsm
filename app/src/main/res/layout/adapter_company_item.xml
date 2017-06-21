@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
+<LinearLayout
+    android:id="@+id/company_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联盟公司名称"
+            android:textSize="@dimen/textsize_8"
+            android:singleLine="true"
+            android:textColor="#181818"/>
+        <TextView
+            android:id="@+id/company_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_7"
+            android:text="所在城市:济南市"
+            android:layout_marginTop="5dp"
+            android:singleLine="true"
+            android:textColor="#2B2B2B"
+            android:layout_marginBottom="5dp"/>
+        <TextView
+            android:id="@+id/company_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textSize="@dimen/textsize_7"
+            android:text="0531-12345678"
+            android:textColor="#2B2B2B"
+           />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/company_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联盟公司"
+            android:layout_gravity="right"
+            android:layout_marginBottom="3dp"
+            android:textSize="@dimen/textsize_7"
+            android:textColor="#B18344"/>
+
+        <TextView
+            android:id="@+id/company_tel_call"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:layout_gravity="right"
+            android:text="拨打"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_8"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:drawableLeft="@mipmap/tel_service_img"
+            android:background="@drawable/sh_text_gate"
+            />
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

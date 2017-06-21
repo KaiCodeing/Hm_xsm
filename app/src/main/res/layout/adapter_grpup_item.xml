@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:id="@+id/city_layout"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:background="#F6F6F6"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="山东省"
+        android:textColor="#181818"
+        android:textSize="@dimen/textsize_7"/>
+    <ImageView
+        android:id="@+id/show_bz"
+        android:layout_width="18dp"
+        android:layout_height="9dp"
+        android:src="@mipmap/service_xia_jian_img"/>
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        ></View>
+</LinearLayout>

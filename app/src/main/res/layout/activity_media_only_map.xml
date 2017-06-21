@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_right_image" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/go_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/go_to_loaction_img"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="50dp"
+
+            android:layout_marginRight="50dp"/>
+        <ImageView
+            android:id="@+id/go_show"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/city_loaction_add_bg"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/add_city_layout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="20dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="公司名称"
+            android:textSize="@dimen/textsize_8"
+            android:textColor="#181818"
+
+            />
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:text="所在城市:山东济南"
+            android:textSize="@dimen/textsize_7"
+
+            />
+    </LinearLayout>
+</LinearLayout>

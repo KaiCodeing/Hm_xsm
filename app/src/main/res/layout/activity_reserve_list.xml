@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
+    <include layout="@layout/title_right_left"></include>
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radio_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:background="@color/white"
+            android:text="全部"
+            android:layout_marginRight="1dp"
+            android:button="@null"
+            android:checked="true"
+            android:textColor="@drawable/select_text_meida_type"
+            />
+        <RadioButton
+            android:id="@+id/radio_2"
+            android:layout_marginLeft="1dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_marginRight="1dp"
+            android:text="10天内到期"
+            android:button="@null"
+            android:textColor="@drawable/select_text_meida_type"
+            />
+        <RadioButton
+            android:id="@+id/radio_3"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="1dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:text="已到期"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@drawable/select_text_meida_type"
+            />
+        <RadioButton
+            android:id="@+id/radio_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@mipmap/rq_new_media_select"
+            android:text="空档期"
+            android:visibility="gone"
+            android:gravity="center"
+            android:button="@null"
+            android:textColor="@drawable/select_text_meida_type"
+            />
+    </RadioGroup>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:background="@color/white">
+
+        <com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout
+            android:id="@+id/refreshLoadmoreLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            >
+
+            <xtom.frame.view.XtomListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@null"
+                android:listSelector="@color/transparent" />
+        </com.hemaapp.hm_FrameWork.view.RefreshLoadmoreLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</LinearLayout>

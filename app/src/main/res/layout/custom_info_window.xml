@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@mipmap/loaction_text_img"
+    >
+    <TextView
+        android:id="@+id/loaction_text"
+        android:text="山东省济南市高新"
+        android:gravity="center"
+        android:layout_marginLeft="2dp"
+        android:singleLine="true"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="3dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_7"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="3dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/loction_go_im"/>
+</LinearLayout>

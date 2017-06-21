@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/title_right_left"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:id="@+id/vp_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.hemaapp.xsm.view.JhViewPager
+                        android:id="@+id/adviewpager"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="200dp" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_gravity="bottom">
+
+                        <RadioGroup
+                            android:id="@+id/radiogroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal" />
+                    </FrameLayout>
+                    <ImageView
+                        android:id="@+id/company_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ad_defalut_bg"
+                        android:scaleType="centerCrop"/>
+                    <LinearLayout
+                        android:id="@+id/yy_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#BB34313F"
+                        android:orientation="vertical"
+                        android:paddingTop="20dp"
+                        android:gravity="center"
+                        android:paddingBottom="20dp"
+                        android:layout_gravity="bottom">
+                        <TextView
+                            android:id="@+id/industry_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="招商电话: 12345678"
+                            android:textSize="@dimen/textsize_8"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#2B2B2B"
+                    android:textSize="@dimen/textsize_8"
+                    android:text="公司名称"
+                    android:layout_margin="10dp"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/lang_line_img"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"></View>
+                <TextView
+                    android:id="@+id/media_keytype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="媒体形式: 道闸广告"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="展示状态: 上刊"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="发布日期: 2014/12/8—2017/12/1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_standard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="媒体规格: 3.5m*2.2m"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_astrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="限制内容: 限制广告内容"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="所在区域: 省 市 区"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/media_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="@dimen/textsize_7"
+                    android:textColor="#585858"
+                    android:text="精确位置: 省 市 区 镇"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                   />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/issue_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:textSize="@dimen/textsize_7"
+                        android:textColor="#585858"
+                        android:text="发布人: 李小鹏"
+                        />
+                    <TextView
+                        android:id="@+id/issue_company"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/textsize_7"
+                        android:textColor="#585858"
+                        android:text="联盟公司: 山东新社媒广告公司"
+                        />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textSize="@dimen/textsize_7"
+                            android:textColor="#585858"
+                            android:text="精确位置:"
+                            />
+                    <TextView
+                        android:id="@+id/issue_tel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/textsize_7"
+                        android:textColor="#2D4782"
+                        android:text="山东省济南市"
+                        />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/issue_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:layout_marginTop="10dp"
+                        android:textSize="@dimen/textsize_7"
+                        android:visibility="gone"
+                        android:textColor="#585858"
+                        android:text="发布时间: 2017-1-12 10:32"
+                        />
+                </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/media_photograph_img"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_gravity="center"
+                        android:background="#F1F1F1"></View>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/add_view_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"></LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/go_tel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#4E69A3"
+            android:drawableLeft="@mipmap/tel_media_img"
+            android:drawablePadding="5dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="20dp"
+            android:text="一键拨打"
+            android:visibility="gone"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/go_loaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@color/backgroud_title"
+            android:drawablePadding="5dp"
+
+            android:drawableRight="@mipmap/next_media_img"
+            android:gravity="right"
+            android:paddingBottom="20dp"
+            android:paddingRight="160dp"
+            android:paddingTop="20dp"
+            android:text="查看地图"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

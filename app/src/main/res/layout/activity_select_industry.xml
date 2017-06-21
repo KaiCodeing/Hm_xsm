@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1">
+    <include layout="@layout/title_right_left"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="按行业筛选"
+            android:textSize="@dimen/textsize_7"/>
+        <com.hemaapp.xsm.view.JhctmGridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:horizontalSpacing="5dp"
+            android:scrollbars="none"
+            android:verticalSpacing="5dp"
+            android:listSelector="@color/transparent"
+            ></com.hemaapp.xsm.view.JhctmGridView>
+    </LinearLayout>
+</LinearLayout>
