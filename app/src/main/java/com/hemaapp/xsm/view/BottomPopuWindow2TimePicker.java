@@ -48,8 +48,10 @@ public class BottomPopuWindow2TimePicker extends PopupWindow {
     public BottomPopuWindow2TimePicker(Context context, OnBackClickForString itemsOnClick, int startYear, int yearCount) {
         super(context);
         this.context = context;
+        Calendar a = Calendar.getInstance();
         this.itemsOnClick = itemsOnClick;
         this.startYear = startYear;
+        this.startYear = a.get(Calendar.YEAR);
         this.yearCount = yearCount;
         findView();
         initPopu();
@@ -277,8 +279,15 @@ public class BottomPopuWindow2TimePicker extends PopupWindow {
     public String[] getYearStringArray() {
         String[] new_arry = new String[yearCount];
         if (startYear != 0) {
+            int m =yearCount/2;
             for (int i = 0; i < yearCount; i++) {
-                new_arry[i] = (startYear + i) + "年";
+                if (i < yearCount / 2)
+                    new_arry[i] = (startYear + i) + "年";
+                else
+                {
+                    new_arry[i] = (startYear - m) + "年";
+                    m--;
+                }
             }
         } else {
             for (int i = 0; i < yearCount; i++) {

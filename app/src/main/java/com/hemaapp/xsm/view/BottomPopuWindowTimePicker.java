@@ -39,7 +39,7 @@ public class BottomPopuWindowTimePicker extends PopupWindow {
     public BottomPopuWindowTimePicker(Context context, OnBackClickForString itemsOnClick, int startYear, int yearCount) {
         super(context);
         this.context = context;
-        Calendar a=Calendar.getInstance();
+        Calendar a = Calendar.getInstance();
 
         this.itemsOnClick = itemsOnClick;
         this.startYear = startYear;
@@ -62,7 +62,7 @@ public class BottomPopuWindowTimePicker extends PopupWindow {
         //设置SelectPicPopupWindow弹出窗体可点击
         this.setFocusable(true);
         //设置SelectPicPopupWindow弹出窗体动画效果
-       this.setAnimationStyle(R.style.PopupAnimation);
+        this.setAnimationStyle(R.style.PopupAnimation);
         //实例化一个ColorDrawable颜色为半透明
         ColorDrawable dw = new ColorDrawable(00000000);
         //设置SelectPicPopupWindow弹出窗体的背景
@@ -117,11 +117,11 @@ public class BottomPopuWindowTimePicker extends PopupWindow {
             }
         });
     }
+
     /**
      *
      */
-    public abstract interface OnBackClickForString
-    {
+    public abstract interface OnBackClickForString {
         public abstract void onBackResult(String string);
     }
 
@@ -241,8 +241,15 @@ public class BottomPopuWindowTimePicker extends PopupWindow {
     public String[] getYearStringArray() {
         String[] new_arry = new String[yearCount];
         if (startYear != 0) {
+            int m =yearCount/2;
             for (int i = 0; i < yearCount; i++) {
-                new_arry[i] = (startYear + i) + "年";
+                if (i < yearCount / 2)
+                    new_arry[i] = (startYear + i) + "年";
+                else
+                {
+                    new_arry[i] = (startYear - m) + "年";
+                    m--;
+                }
             }
         } else {
             for (int i = 0; i < yearCount; i++) {
