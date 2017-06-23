@@ -393,6 +393,10 @@ public class RqSearchResultActivity extends JhActivity implements View.OnClickLi
         holder.compile_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if ("2".equals(media.getStatus())) {
+                    showTextDialog("抱歉,空档期不能编辑！");
+                    return;
+                }
                 Intent intent = new Intent(mContext,RqChangeMediaActivity.class);
                 intent.putExtra("mediaId",media.getId());
                 startActivity(intent);
