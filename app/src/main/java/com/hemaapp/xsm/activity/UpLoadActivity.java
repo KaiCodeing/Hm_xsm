@@ -38,8 +38,7 @@ public class UpLoadActivity extends JhActivity implements View.OnClickListener {
         setContentView(R.layout.activity_upload);
         super.onCreate(savedInstanceState);
         upGrade = new JhUpGrade(this);
-        getNetWorker().upDateInfor();
-        ;
+        getNetWorker().upDateInfor(JhctmApplication.getInstance().getUser().getToken());
     }
 
     @Override
@@ -54,6 +53,7 @@ public class UpLoadActivity extends JhActivity implements View.OnClickListener {
 
     @Override
     protected void callBackForServerSuccess(HemaNetTask hemaNetTask, HemaBaseResult hemaBaseResult) {
+        log_i("获取更新信息--------3");
         HemaArrayResult<ConReport> result = (HemaArrayResult<ConReport>) hemaBaseResult;
         conReports = result.getObjects();
         setData();
@@ -127,7 +127,7 @@ public class UpLoadActivity extends JhActivity implements View.OnClickListener {
                 log_i("点击了++++++");
                 SysInitInfo sysInitInfo = JhctmApplication.getInstance().getSysInitInfo();
                 upGrade.upGrade(sysInitInfo);
-                finish();
+              //  finish();
                 break;
         }
     }

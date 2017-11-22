@@ -40,6 +40,7 @@ public class SearchActivity extends JhActivity {
         setContentView(R.layout.activity_saarch);
         super.onCreate(savedInstanceState);
         client = SearchDBClient.get(mContext);
+
     }
 
     @Override

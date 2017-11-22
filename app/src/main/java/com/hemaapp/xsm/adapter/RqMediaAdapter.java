@@ -152,6 +152,9 @@ public class RqMediaAdapter extends HemaAdapter {
         //判断是否全选
         if ("1".equals(colseType)) {    //判断是否有编辑的权限、、没有
             holder.show_pop.setVisibility(View.GONE);
+            if ("2".equals(media.getStatus())) {
+                return;
+            }
             if ("0".equals(media.getIsedit())) {
                 //   holder.show_pop.setVisibility(View.GONE);
                 holder.all_buy_img.setVisibility(View.GONE);
@@ -180,10 +183,10 @@ public class RqMediaAdapter extends HemaAdapter {
         } else {
             //  holder.show_pop.setVisibility(View.VISIBLE);
             if ("3".equals(JhctmApplication.getInstance().getUser().getFeeaccount()))
-            if ("0".equals(media.getIsedit())) {
-                holder.show_pop.setVisibility(View.GONE);
-            } else
-                holder.show_pop.setVisibility(View.VISIBLE);
+                if ("0".equals(media.getIsedit())) {
+                    holder.show_pop.setVisibility(View.GONE);
+                } else
+                    holder.show_pop.setVisibility(View.VISIBLE);
             holder.all_buy_img.setVisibility(View.GONE);
         }
         //编辑的操作

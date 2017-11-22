@@ -191,11 +191,13 @@ public class MediaIssueActivity extends JhActivity {
 
     private void camera() {
         String imagepath = imageWay.getCameraImage();
+
         new CompressPicTask().execute(imagepath);
     }
 
     private void camera2() {
         String imagepath = imageWay2.getCameraImage();
+
         new CompressPicTask2().execute(imagepath);
     }
 
@@ -232,7 +234,13 @@ public class MediaIssueActivity extends JhActivity {
         @Override
         protected Integer doInBackground(String... params) {
             try {
+
                 String path = params[0];
+                if (isNull(path))
+                {
+                    showTextDialog("无效的照片路径");
+                    return 1;
+                }
                 String savedir = XtomFileUtil.getTempFileDir(mContext);
                 compressPath = XtomImageUtil.compressPictureWithSaveDir(path,
                         XsmConfig.IMAGE_WIDTH, XsmConfig.IMAGE_WIDTH,
@@ -274,6 +282,11 @@ public class MediaIssueActivity extends JhActivity {
         protected Integer doInBackground(String... params) {
             try {
                 String path = params[0];
+                if (isNull(path))
+                {
+                    showTextDialog("无效的照片路径");
+                    return 1;
+                }
                 String savedir = XtomFileUtil.getTempFileDir(mContext);
                 compressPath = XtomImageUtil.compressPictureWithSaveDir(path,
                         XsmConfig.IMAGE_WIDTH, XsmConfig.IMAGE_WIDTH,

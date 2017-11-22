@@ -144,13 +144,13 @@ public class JhctmImageWay extends XtomObject {
 		Uri uri = Uri.fromFile(out);
 		it3.putExtra(MediaStore.EXTRA_OUTPUT, uri);
 
-		if (mContext != null)
+		if (mContext != null) {
 			if (Build.VERSION.SDK_INT >= 23) {
 				int checkCallPhonePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
-				if(checkCallPhonePermission != PackageManager.PERMISSION_GRANTED){
-					ActivityCompat.requestPermissions(mContext,new String[]{Manifest.permission.CAMERA},222);
+				if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+					ActivityCompat.requestPermissions(mContext, new String[]{Manifest.permission.CAMERA}, 222);
 					return;
-				}else{
+				} else {
 
 					mContext.startActivityForResult(it3, cameraRequestCode);
 				}
@@ -159,19 +159,19 @@ public class JhctmImageWay extends XtomObject {
 				mContext.startActivityForResult(it3, cameraRequestCode);
 			}
 
-		else
-		if (Build.VERSION.SDK_INT >= 23) {
-			int checkCallPhonePermission = ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA);
-			if(checkCallPhonePermission != PackageManager.PERMISSION_GRANTED){
-				ActivityCompat.requestPermissions(mContext,new String[]{Manifest.permission.CAMERA},222);
-				return;
-			}else{
+		}else {
+			if (Build.VERSION.SDK_INT >= 23) {
+				int checkCallPhonePermission = ContextCompat.checkSelfPermission(mFragment.getActivity(), Manifest.permission.CAMERA);
+				if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+					ActivityCompat.requestPermissions(mFragment.getActivity(), new String[]{Manifest.permission.CAMERA}, 222);
+					return;
+				} else {
+					mFragment.startActivityForResult(it3, cameraRequestCode);
+				}
+			} else {
 				mFragment.startActivityForResult(it3, cameraRequestCode);
 			}
-		} else {
-			mFragment.startActivityForResult(it3, cameraRequestCode);
 		}
-
 
 	}
 

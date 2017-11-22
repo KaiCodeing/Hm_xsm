@@ -354,8 +354,8 @@ public class StartActivity extends JhActivity implements AMapLocationListener{
      * @返回值: void
      */
     private void toMain() {
-       Intent intent = new Intent(StartActivity.this, MainActivity.class);
-        //Intent intent = new Intent(StartActivity.this, SearchActivity_Map.class);
+      Intent intent = new Intent(StartActivity.this, MainActivity.class);
+        //Intent intent = new Intent(StartActivity.this, UpLoadActivity.class);
         intent.putExtra("fromNotification", fromNotification);
         log_i("启动页的信息是什么-----------"+fromNotification);
         finish();

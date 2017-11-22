@@ -99,7 +99,7 @@ public class MediaOnlyMapActivity extends JhActivity implements
     private TextView title_text;
     private ImageButton next_button;
     private String lng;
-    private String lat;
+    private String  lat;
     private ImageView go_to;
     private String keytype;
     private ArrayList<Media> medias;
@@ -378,7 +378,7 @@ public class MediaOnlyMapActivity extends JhActivity implements
         }
         switch (requestCode) {
             case 1: //相册
-                cityL = data.getStringExtra("cityL");
+//                cityL = data.getStringExtra("cityL");
                 centerLatLng = new LatLng(data.getDoubleExtra("lat", 1.0), data.getDoubleExtra("lng", 1.0));
                 centerMarker.setPosition(new LatLng(data.getDoubleExtra("lat", 1.0), data.getDoubleExtra("lng", 1.0)));
                 getAddress(new LatLonPoint(data.getDoubleExtra("lat", 1.0), data.getDoubleExtra("lng", 1.0)));

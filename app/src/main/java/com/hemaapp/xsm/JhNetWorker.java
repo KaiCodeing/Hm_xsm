@@ -813,9 +813,10 @@ public class JhNetWorker extends HemaNetWorker {
      * @paramupdate_info
      * @param
      */
-    public void upDateInfor() {
+    public void upDateInfor(String token) {
         JhHttpInformation information = JhHttpInformation.UPDATE_INFO;
         HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", token);
         JhNetTask task = new UpDateInforTask(information, params);
         executeTask(task);
     }

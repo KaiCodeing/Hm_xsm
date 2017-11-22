@@ -10,8 +10,6 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.hemaapp.hm_FrameWork.model.Image;
-import com.hemaapp.hm_FrameWork.showlargepic.ShowLargePicActivity;
 import com.hemaapp.xsm.R;
 import com.hemaapp.xsm.activity.MediaOnlyMapActivity;
 import com.hemaapp.xsm.activity.WebViewActivity;
@@ -138,13 +136,13 @@ public class TopAdAdapter extends PagerAdapter {
 					}
 					//道阀广告图
 					if (aa.getKeytype().equals("3")) {
-						ArrayList<Image> images= new ArrayList<Image>();
-						images.add(new Image("","","","",aa.getImgurl(),aa.getImgurlbig(),"0"));
-						Intent it = new Intent(fragment.getActivity(), ShowLargePicActivity.class);
-						it.putExtra("position", 0);
-						it.putExtra("images", images);
-						it.putExtra("titleAndContentVisible", false);
-						fragment.startActivity(it);
+//						ArrayList<Image> images= new ArrayList<Image>();
+//						images.add(new Image("","","","",aa.getImgurl(),aa.getImgurlbig(),"0"));
+//						Intent it = new Intent(fragment.getActivity(), ShowLargePicActivity.class);
+//						it.putExtra("position", 0);
+//						it.putExtra("images", images);
+//						it.putExtra("titleAndContentVisible", false);
+//						fragment.startActivity(it);
 					}
 				}
 			});

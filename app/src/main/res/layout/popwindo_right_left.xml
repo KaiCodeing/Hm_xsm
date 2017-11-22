@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+
                 android:text="一旦清空将不能找回"
                 android:textColor="#7A7A7A"
                 android:textSize="@dimen/textsize_7"

@@ -30,96 +30,96 @@
         android:text="验证码已发送到188****3625"
         android:textColor="#171717" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/yanzheng_text"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:background="@null"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="20dp"
-            android:paddingTop="20dp"
-            android:hint="请输入验证码"
-            android:inputType="number"
-            android:singleLine="true"
-            android:textSize="@dimen/textsize_7" />
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white_p"></View>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:clickable="true">
-
-            <LinearLayout
-                android:id="@+id/agin_layout"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/yanzheng_text"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:visibility="invisible"
-               >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="1dp"
-                    android:text="重发"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="20dp"
-                    android:textColor="@color/white_p"
-                    android:textSize="@dimen/textsize_7" />
-
-                <TextView
-                    android:id="@+id/second"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="60"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="20dp"
-                    android:textColor="#F24949"
-                    android:textSize="@dimen/textsize_9" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="S"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="20dp"
-                    android:textColor="#F24949"
-                    android:textSize="@dimen/textsize_7" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/send_button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_gravity="center"
+                android:layout_weight="2"
                 android:background="@null"
-                android:text="发送验证码"
-                android:textColor="#181818"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:singleLine="true"
                 android:textSize="@dimen/textsize_7" />
-        </FrameLayout>
 
-    </LinearLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white_p"></View>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:clickable="true">
+
+                <LinearLayout
+                    android:id="@+id/agin_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                   >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="1dp"
+                        android:text="重发"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:textColor="@color/white_p"
+                        android:textSize="@dimen/textsize_7" />
+
+                    <TextView
+                        android:id="@+id/second"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:textColor="#F24949"
+                        android:textSize="@dimen/textsize_9" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="S"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:textColor="#F24949"
+                        android:textSize="@dimen/textsize_7" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/send_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:text="发送验证码"
+                    android:textColor="#181818"
+                    android:textSize="@dimen/textsize_7" />
+            </FrameLayout>
+
+        </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_add_user"
         android:layout_width="match_parent"

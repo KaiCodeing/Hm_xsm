@@ -68,6 +68,7 @@ public class HomeFragment extends JhFragment{
     private ArrayList<AdList> adLists = new ArrayList<>();//广告
     private FrameLayout vp_top;
     private RadioGroup radiogroup;
+    private long checkTime = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_home);

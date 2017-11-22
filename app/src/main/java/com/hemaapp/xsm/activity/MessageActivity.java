@@ -161,6 +161,7 @@ public class MessageActivity extends JhActivity {
                 deleteItem.setWidth(dp2px(70));
                 // set a icon
                 deleteItem.setIcon(R.mipmap.delete);
+
                 // add to menu
                 menu.addMenuItem(deleteItem);
             }

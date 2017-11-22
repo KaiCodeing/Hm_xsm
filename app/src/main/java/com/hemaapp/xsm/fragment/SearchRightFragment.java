@@ -25,17 +25,17 @@ import xtom.frame.view.XtomListView;
 /**
  * Created by lenovo on 2017/5/23.
  * 搜索左
- *
  */
 public class SearchRightFragment extends JhFragment {
     private EditText EdSearch;
-    private TextView  tvright;
+    private TextView tvright;
     private XtomListView listview;
     private ImageView imgnone;
     private SearchDBClient client;
     private ArrayList<String> search_strs;
     private RQSearchAdapter adapter;
     private String keytype;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_right_search);
@@ -72,7 +72,7 @@ public class SearchRightFragment extends JhFragment {
             //   getHistoryList_done();
 //            refreshLoadmoreLayout.setVisibility(View.VISIBLE);
 //            progressbar.setVisibility(View.GONE);
-            adapter = new RQSearchAdapter(SearchRightFragment.this, search_strs,keytype);
+            adapter = new RQSearchAdapter(SearchRightFragment.this, search_strs, keytype);
             listview.setAdapter(adapter);
         }
     }
@@ -114,14 +114,15 @@ public class SearchRightFragment extends JhFragment {
     protected void setListener() {
         //获取类型， 非空为点位 1 没有选择 2 有选择
         keytype = getActivity().getIntent().getStringExtra("keytype");
-        if (!isNull(keytype))
+        if (isNull(keytype))
             EdSearch.setHint("请输入楼盘名称或客户名称关键词");
+        else
+            EdSearch.setHint("请输入楼盘名称关键词");
         //确定搜索
         tvright.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isNull(EdSearch.getText().toString()))
-                {
+                if (isNull(EdSearch.getText().toString())) {
                     showTextDialog("请输入搜索内容");
                     return;
                 }
@@ -133,13 +134,14 @@ public class SearchRightFragment extends JhFragment {
                 else {
                     intent = new Intent(getActivity(), RqLoactionResultActivity.class);
                 }
-                intent.putExtra("keyword",search);
-                intent.putExtra("keytype",keytype);
-                intent.putExtra("typekey",getActivity().getIntent().getStringExtra("typekey"));
-                startActivityForResult(intent,1);
+                intent.putExtra("keyword", search);
+                intent.putExtra("keytype", keytype);
+                intent.putExtra("typekey", getActivity().getIntent().getStringExtra("typekey"));
+                startActivityForResult(intent, 1);
             }
         });
     }
+
     /**
      * 删除
      */

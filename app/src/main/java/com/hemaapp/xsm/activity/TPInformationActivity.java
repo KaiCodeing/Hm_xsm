@@ -162,6 +162,17 @@ public class TPInformationActivity extends JhActivity {
         media_address.setText("媒体规格:" + mediaGet.getSpec());
         //限制内容
         issue_user.setText("限制内容:" + mediaGet.getLimitself());
+        String ge = mediaGet.getLimitself();
+        if (isNull(ge))
+            ge = "";
+        if ("1".equals(mediaGet.getLimitcontent()))
+            issue_user.setText("限制内容: 不限" + ge);
+        else if ("2".equals(mediaGet.getLimitcontent()))
+            issue_user.setText("限制内容: 房地产" + ge);
+        else if ("3".equals(mediaGet.getLimitcontent()))
+            issue_user.setText("限制内容: 医疗" + ge);
+        else
+            issue_user.setText("限制内容: 房地产,医疗" + ge);
         //所在区域
         issue_company.setText("所在区域:" + mediaGet.getProvince() + " " + mediaGet.getCity() + " " + mediaGet.getArea());
         //详细地址

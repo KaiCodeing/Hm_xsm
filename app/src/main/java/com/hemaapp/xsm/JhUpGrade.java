@@ -1,11 +1,11 @@
 package com.hemaapp.xsm;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 
 import com.hemaapp.hm_FrameWork.HemaNetTask;
 import com.hemaapp.hm_FrameWork.HemaNetWorker;
@@ -84,6 +84,7 @@ public class JhUpGrade extends XtomObject {
         @Override
         public void onServerSuccess(HemaNetWorker netWorker,
                                     HemaNetTask netTask, HemaBaseResult baseResult) {
+            log_i("调用了自动更新--------1");
             checkTime = System.currentTimeMillis();
             @SuppressWarnings("unchecked")
             HemaArrayResult<SysInitInfo> sResult = (HemaArrayResult<SysInitInfo>) baseResult;
@@ -138,7 +139,7 @@ public class JhUpGrade extends XtomObject {
 
     public void upGrade(SysInitInfo sysInitInfo) {
         String downPath = sysInitInfo.getAndroid_update_url();
-        savePath = XtomFileUtil.getFileDir(mContext) + "/apps/mmzzb_"
+        savePath = XtomFileUtil.getFileDir(mContext) + "/apps/xsm_"
                 + sysInitInfo.getAndroid_last_version() + ".apk";
         XtomFileDownLoader downLoader = new XtomFileDownLoader(mContext,
                 downPath, savePath);

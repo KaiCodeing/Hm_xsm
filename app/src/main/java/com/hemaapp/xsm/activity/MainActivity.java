@@ -54,7 +54,8 @@ public class MainActivity extends JhFragmentActivity {
         // 个推相关 start
         startGeTuiPush();
         // 个推相关 end
-        upGrade = new JhUpGrade(this);
+//        upGrade = new JhUpGrade(this);
+
     }
     @Override
     protected void onResume() {
@@ -62,18 +63,20 @@ public class MainActivity extends JhFragmentActivity {
 //        if (upGrade != null) {
 //            upGrade.check();
 //        }
+        log_i("跳页----------------1.31");
         long currentTime = System.currentTimeMillis();
         boolean isCanCheck = checkTime == 0
                 || currentTime - checkTime > 1000 * 60 * 60 * 24;
         if (isCanCheck) {
             SysInitInfo sysInitInfo = JhctmApplication.getInstance().getSysInitInfo();
             checkTime = System.currentTimeMillis();
-         //   @SuppressWarnings("unchecked")
-         //   HemaArrayResult<SysInitInfo> sResult = (HemaArrayResult<SysInitInfo>) baseResult;
-        //    sysInitInfo = sResult.getObjects().get(0);
+            //   @SuppressWarnings("unchecked")
+            //   HemaArrayResult<SysInitInfo> sResult = (HemaArrayResult<SysInitInfo>) baseResult;
+            //    sysInitInfo = sResult.getObjects().get(0);
             String sysVersion = sysInitInfo.getAndroid_last_version();
             String version = HemaUtil.getAppVersionForSever(mContext);
             if (HemaUtil.isNeedUpDate(version, sysVersion)) {
+                log_i("跳页----------------2");
                 Intent intent = new Intent(mContext, UpLoadActivity.class);
                 startActivity(intent);
             }

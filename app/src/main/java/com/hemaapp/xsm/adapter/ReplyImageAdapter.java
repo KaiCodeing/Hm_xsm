@@ -133,13 +133,14 @@ public class ReplyImageAdapter extends HemaAdapter implements View.OnClickListen
 
         JhActivity activity = (JhActivity) mContext;
         holder.imageView.setCornerRadius(2);
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.mipmap.case_defult_img)
+                .showImageForEmptyUri(R.mipmap.case_defult_img)
+                .showImageOnFail(R.mipmap.case_defult_img).cacheInMemory(true)
+                .bitmapConfig(Bitmap.Config.RGB_565).build();
         if (path.contains("http://"))
         {
-            DisplayImageOptions options = new DisplayImageOptions.Builder()
-                    .showImageOnLoading(R.mipmap.case_defult_img)
-                    .showImageForEmptyUri(R.mipmap.case_defult_img)
-                    .showImageOnFail(R.mipmap.case_defult_img).cacheInMemory(true)
-                    .bitmapConfig(Bitmap.Config.RGB_565).build();
+
             ImageLoader.getInstance().displayImage(path, holder.imageView, options);
         }
         else
@@ -147,6 +148,7 @@ public class ReplyImageAdapter extends HemaAdapter implements View.OnClickListen
             XtomImageTask imageTask = new XtomImageTask(holder.imageView, path,
                     mContext);
             activity.imageWorker.loadImage(imageTask);
+        //    ImageLoader.getInstance().displayImage(ImageDownloader.Scheme.FILE.wrap(path), holder.imageView, options);
         }
         holder.imageView.setTag(R.id.TAG, position);
         holder.deleteButton.setTag(R.id.TAG,position);
