@@ -20,6 +20,8 @@ public class AboutSoftActivity extends JhActivity {
     private ImageButton back_button;
     private Button next_button;
     private TextView content;
+
+    //新加测试
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         setContentView(R.layout.activity_about_soft);
